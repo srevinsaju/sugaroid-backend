@@ -32,6 +32,13 @@ def process_sugaroid_statement_json_serialize(glob):
 def home():
     return "<h1>This is Sugaroid API</h1>"
 
+@app.route('/wake', methods=['GET'])
+def wake():
+    response = flask.jsonify({"test":"Ok"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
+
 
 @app.route('/chatbot', methods=['POST'])
 def process():
