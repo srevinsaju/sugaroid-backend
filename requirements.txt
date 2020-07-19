@@ -1,9 +1,10 @@
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz
 python-dotenv
+emoji
 flask
 flask-cors
 gunicorn
--e git://github.com/srevinsaju/sugaroid.git#egg=sugaroid
+https://github.com/srevinsaju/sugaroid/archive/master.zip
 gunicorn
 freegames
 psutil
