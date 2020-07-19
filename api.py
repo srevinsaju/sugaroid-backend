@@ -42,7 +42,7 @@ def home():
 @app.route('/wake', methods=['GET'])
 def wake():
     response = flask.jsonify({"test": "Ok"})
-    response.headers.add('Access-Control-Allow-Origin', 'bot.srevinsaju.me')
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 
@@ -73,7 +73,7 @@ def process():
             "data": b64encode(str(process_sugaroid_statement_json_serialize(new_globals)).encode('utf-8')).decode()
         }
     )
-    response.headers.add('Access-Control-Allow-Origin', 'bot.srevinsaju.me')
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 if __name__ == "__main__":
