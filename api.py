@@ -2,7 +2,6 @@ import flask
 from sugaroid import sugaroid, ver
 import json
 from flask import request
-from flask_cors import CORS, cross_origin
 from base64 import b64decode, b64encode
 import ast
 
@@ -36,13 +35,11 @@ def process_sugaroid_statement_json_serialize(glob):
 
 
 @app.route('/', methods=['GET'])
-@cross_origin(DOMAINS) 
 def home():
     return "<h1>This is Sugaroid API</h1>"
 
 
 @app.route('/wake', methods=['GET'])
-@cross_origin(DOMAINS) 
 def wake():
     response = flask.jsonify({"test": "Ok"})
     response.headers.add('Access-Control-Allow-Origin', '*.srevinsaju.me')
@@ -51,7 +48,6 @@ def wake():
 
 
 @app.route('/chatbot', methods=['POST'])
-@cross_origin(DOMAINS) 
 def process():
     request_params = dict(request.args)
     msg = request_params.pop("usermsg")
