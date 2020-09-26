@@ -1,3 +1,4 @@
+import os
 import flask
 from sugaroid import sugaroid
 from sugaroid.version import VERSION
