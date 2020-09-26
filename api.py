@@ -7,6 +7,7 @@ from base64 import b64decode, b64encode
 import ast
 
 DOMAINS = [
+    "https://sugaroid.srevinsaju.me",
     "https://bot.srevinsaju.me",
     "https://srevinsaju.me",
     "https://srevinsaju.github.io"
@@ -14,7 +15,13 @@ DOMAINS = [
 
 sg = sugaroid.Sugaroid()
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = True if os.getenv("SUGAROID_DEBUG") else False
+
+
+if os.getenv("SUGAROID_DEBUG"):
+    if os.getenv("SUGAROID_CORS"):
+        DOMAINS += os.getenv("SUGAROID_CORS")
+
 
 def process_sugaroid_statement_json_serialize(glob):
     new_history = []
