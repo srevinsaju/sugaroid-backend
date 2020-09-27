@@ -1,8 +1,6 @@
 import os
 import flask
 from sugaroid import sugaroid
-from sugaroid.version import VERSION
-import json
 from flask import request
 from base64 import b64decode, b64encode
 import ast
