@@ -7,6 +7,7 @@ import ast
 
 DOMAINS = [
     "https://sugaroid.srevinsaju.me",
+    "http://sugaroid.srevinsaju.me",
     "https://bot.srevinsaju.me",
     "https://srevinsaju.me",
     "https://srevinsaju.github.io"
