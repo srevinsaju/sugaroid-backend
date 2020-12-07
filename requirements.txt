@@ -3,7 +3,7 @@ python-dotenv
 flask
 flask-cors
 gunicorn
-https://github.com/srevinsaju/sugaroid/archive/3d4affc6089eefe9eb04c380cd624fa49daa56ea.tar.gz
+https://github.com/srevinsaju/sugaroid/archive/38bbecb8e692948fb722078a85c4e22ee1d40f30.tar.gz
 gunicorn
 freegames
 psutil
