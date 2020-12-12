@@ -40,8 +40,6 @@ def process_sugaroid_statement_json_serialize(glob):
     return glob
 
 
-
-
 @app.route('/', methods=['GET'])
 def home():
     return "<h1>This is Sugaroid API</h1>"
@@ -52,7 +50,6 @@ def wake():
     response = flask.jsonify({"test": "Ok"})
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
-
 
 
 @app.route('/chatbot', methods=['POST'])
@@ -74,16 +71,11 @@ def process():
     except AttributeError:
         emotion = 0
     message = str(parsed_msg)
-    response = flask.jsonify(
-        { 
-            "message": message, 
-            "emotion": emotion, 
-            "data": b64encode(str(process_sugaroid_statement_json_serialize(new_globals)).encode('utf-8')).decode()
-        }
-    )
+    response = flask.jsonify({"message": message, "emotion": emotion, "data": b64encode(
+        str(process_sugaroid_statement_json_serialize(new_globals)).encode('utf-8')).decode()})
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+
 if __name__ == "__main__":
     app.run()
-
